@@ -41,3 +41,20 @@ terp8or = "terp8or:main"
 
 [tool.hatch.version]
 path = "src/terp8or/__about__.py"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "B",   # flake8-bugbear
+  "C",   # complexity
+  "E",   # pycodestyle
+  "F",   # pyflakes/autoflake
+  "I",   # isort
+  "W",   # pycodestyle
+  "UP",  # pyupgrade
+  "PIE", # flake8-pie
+  "SIM", # flake8-simplify
+  "TID", # flake8-tidy-imports
+]
