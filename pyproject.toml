@@ -32,6 +32,7 @@ classifiers = [
 ]
 
 [project.urls]
+Homepage = "https://jeffnyman.github.io/terp8or/"
 Repository = "https://github.com/jeffnyman/terp8or.git"
 Issues = "https://github.com/jeffnyman/terp8or/issues"
 
