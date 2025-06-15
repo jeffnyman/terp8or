@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="auto" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>terp8or</title>
+  <link rel="stylesheet" href="./styles/site.css">
+  <script src="./scripts/site.js"></script>
+</head>
+<body>
+  <header>
+    <img src="./assets/images/terp8or.png" width="295" height="122" alt="terp8or">
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./specs.html">Specifications</a>
+      <a href="./refs.html">References</a>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h2>CHIP-8 Specifications</h2>
+
+      <p>
+        The standard specification is usually taken to be the <a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM">Cowgod Tech Reference</a>(). However, Matthew Mikolay's <a href="https://github.com/mattmikolay/chip-8/wiki/CHIP%E2%80%908-Technical-Reference">CHIP-8 Technical Reference</a> is now considered definitive.
+      </p>
+
+      <p>
+        The challenge is that Cowgod's spec lacks certain details, is incorrect on some details, and contradicts on some details. Cowgod's spec was apparently based on yet an earlier specification that many had used to build CHIP-8 interpreters. The upshot is that incorrect implementations have become very common and perhaps the standard. (A similar situation happened with Infocom's Z-Machine.)
+      </p>
+
+      <p>
+        An approach some people take is to default to the spec while supporting the deviations (which are often arguably corrections) through a "quirks mode" flag. A challenge here is that this approach will cause some ROMs to fail unless you enable that quirks mode but, equally, using quirks mode will cause yet other ROMs to fail.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 terp8or - Jeff Nyman. All rights reserved.</p>
+  </footer>
+</body>
+</html>

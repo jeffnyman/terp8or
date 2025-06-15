@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="auto" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>terp8or</title>
+  <link rel="stylesheet" href="./styles/site.css">
+  <script src="./scripts/site.js"></script>
+</head>
+<body>
+  <header>
+    <img src="./assets/images/terp8or.png" width="295" height="122" alt="terp8or">
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./specs.html">Specifications</a>
+      <a href="./refs.html">References</a>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h2>CHIP-8 References</h2>
+
+      <p>
+        There are some primary references I use that are contemporary with the events in question, which was the time period of the development and distribution of the CHIP-8.
+      </p>
+
+      <p>
+        The following come from the RCA COSMAC VIP CDP18S711 Instruction Manual, published in February of 1978.
+      </p>
+
+      <ul>
+        <li>
+          <a href="./assets/docs/CHIP-8-Interpreter-Source-1978.pdf">CHIP-8-Interpreter-Source-1978.pdf</a>
+        </li>
+        <li>
+          <a href="./assets/docs/CHIP-8-Language-Programming-1978.pdf">CHIP-8-Language-Programming-1978.pdf</a>
+        </li>
+      </ul>
+
+      <p>
+        For the full document, you can check out <a href="http://www.bitsavers.org/components/rca/cosmac/COSMAC_VIP_Instruction_Manual_1978.pdf">Bitsavers</a> or the <a href="https://archive.org/details/rca-cosmac-vip-cdp-18-s-711-instruction-manual-vdp-311">Internet Archive</a>.
+      </p>
+
+      <p>
+        The following are from the VIPER hobbyist newsletter. The first is the full newsletter for that issue. The second contains just a portion of the issue, specifically an untitled article written by Peter K. Morrison.
+      </p>
+
+      <ul>
+        <li>
+          <a href="./assets/docs/VIPER-v1-n1-jun-1978.pdf">VIPER-v1-n1-jun-1978.pdf</a>
+        </li>
+        <li>
+          <a href="./assets/docs/VIPER-v1-n2-aug-1978.pdf">VIPER-v1-n2-aug-1978.pdf</a>
+        </li>
+      </ul>
+
+      <p>
+        Regarding that second reference, Weisbecker's original CHIP-8 interpreter for the VIP supported four undocumented arithmetic/logic instructions:
+      </p>
+
+      <ul>
+        <li>8XY3: VX = VX XOR VY</li>
+        <li>8XY6: VX = VY >> 1</li>
+        <li>8XY7: VX = VY - VX</li>
+        <li>8XYE: VX = VY << 1</li>
+      </ul>
+
+      <p>
+        These instructions were discovered in 1978 and that's what you see detailed in the COSMAC VIP's newsletter article by Morrison.
+      </p>
+
+      <p>
+        The following is the article "An Easy Programming System" from <em>BYTE Magazine</em>, Volume 3, Issue 12, December 1978.
+      </p>
+
+      <ul>
+        <li>
+          <a href="./assets/docs/CHIP-8-Programming-Byte-1978.pdf">CHIP-8-Programming-Byte-1978.pdf</a>
+        </li>
+      </ul>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 terp8or - Jeff Nyman. All rights reserved.</p>
+  </footer>
+</body>
+</html>
