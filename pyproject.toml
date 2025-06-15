@@ -1,0 +1,28 @@
+[project]
+name = "terp8or"
+version = "0.0.0"
+description = "A Pedagogical CHIP-8 Interpreter"
+authors = [
+  { name = "Jeff Nyman", email = "jeffnyman@gmail.com" },
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+keywords = [
+  "chip-8",
+  "interpreter",
+  "emulation",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: End Users/Desktop",
+  "Natural Language :: English",
+  "Topic :: Games/Entertainment",
+]
+
+[project.urls]
+Repository = "https://github.com/jeffnyman/terp8or.git"
+Issues = "https://github.com/jeffnyman/terp8or/issues"
