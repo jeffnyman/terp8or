@@ -1,0 +1,25 @@
+# Establish project-wide standard of LF line endings.
+* text=auto eol=lf
+
+# Binary files (binary is a macro for -text -diff).
+*.ch8    binary
+*.pdf    binary
+*.ico    binary
+*.gif    binary
+*.jpg    binary
+*.png    binary
+*.jpeg   binary
+*.webp   binary
+
+# Treat SVG files as normalized text instead of binary.
+*.svg    text
+
+# Handle Windows specific files.
+*.bat    text eol=crlf
+
+# Improve diff output for Python files.
+*.py     diff=python
+
+# Export exclusions for archive.
+.gitattributes     export-ignore
+.gitignore         export-ignore
