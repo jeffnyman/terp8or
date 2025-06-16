@@ -58,6 +58,116 @@
       <p>
         Thus, "CHIP-8 interpreter" is the technically accurate term, even though "CHIP-8 emulator" has become common parlance in retro computing circles.
       </p>
+
+      <h2>Concepts</h2>
+
+      <p>
+        Let's say you're considering interpretation and specifically the CHIP-8. You're (wisely!) trying to make sure you understand the fundamentals of interpretation first. The key fundamental is that the goal is to search for opcodes which are, effectively, machine language instructions.
+      </p>
+
+      <p>
+        Is it possible to show what a simple CHIP-8 program would look like if it was written purely with the opcodes? Absolutely! Here's a simple program that displays a sprite on screen:
+      </p>
+
+      <pre><code>
+        Address    Opcode   Assembly         Description
+        0x200:     0xA220   LD I, 0x220      Load address 0x220 into I register
+        0x202:     0x6000   LD V0, 0x00      Load 0 into V0 (X coordinate)
+        0x204:     0x6105   LD V1, 0x05      Load 5 into V1 (Y coordinate)
+        0x206:     0xD015   DRW V0, V1, 5    Draw 5-byte sprite at (V0,V1)
+        0x208:     0x1208   JP 0x208         Jump to 0x208 (infinite loop)
+
+        Sprite data at 0x220:
+        0x220: 0xF0  (11110000 binary) - Top of character
+        0x221: 0x90  (10010000 binary)
+        0x222: 0x90  (10010000 binary)
+        0x223: 0x90  (10010000 binary)
+        0x224: 0xF0  (11110000 binary) - Bottom of character
+      </code></pre>
+
+      <p>
+        What does that do?
+      </p>
+
+      <ol>
+        <li>
+          Sets the I register to point to sprite data at memory address 0x220.
+        </li>
+        <li>
+          Sets coordinate 0 in register V0.
+        </li>
+        <li>
+          Sets coordinate 5 in register V1.
+        </li>
+        <li>
+          Draws a 5-byte tall sprite.
+        </li>
+        <li>
+          Loops forever.
+        </li>
+      </ol>
+
+      <p>
+        The sprite data is shown and it would look like the number "0" when displayed.
+      </p>
+
+      <p>
+        Any interpreter would essentially follow four steps.
+      </p>
+
+      <ol>
+        <li>
+          Fetch the opcode at the program counter (starting at 0x200)
+        </li>
+        <li>
+          Decode it (e.g., 0xA220 = "load immediate into I register")
+        </li>
+        <li>
+          Execute the instruction
+        </li>
+        <li>
+          Increment the program counter and repeat
+        </li>
+      </ol>
+
+      <p>
+        Each opcode is exactly 2 bytes in CHIP-8, and the program counter typically advances by 2 each cycle (except for jumps). This is the fundamental fetch-decode-execute cycle that all emulators implement.
+      </p>
+
+      <p>
+        Now, I said above that that CHIP-8 was an interpreted language that ran on a virtual machine. In that case, what would the above program look like if it was written in that CHIP-8 language?
+      </p>
+
+      <p>
+        Well, the opcodes I showed you <em>are</em> the CHIP-8 language. CHIP-8 didn't have a separate high-level programming language that compiled down to those opcodes. Those opcodes <em>were</em> the programming interface. Back in the 1970s, programmers would write CHIP-8 programs via a couple of steps.
+      </p>
+
+      <p>
+        First, they might hand-assemble using mnemonics, by which I mean human-readable versions of the opcodes.
+      </p>
+
+      <pre><code>
+        LD I, sprite_data    ; Load sprite address into I
+        LD V0, 0             ; X coordinate = 0
+        LD V1, 5             ; Y coordinate = 5
+        DRW V0, V1, 5        ; Draw 5-byte sprite
+        JP loop              ; Jump back to loop
+
+        sprite_data:
+          DB 0xF0, 0x90, 0x90, 0x90, 0xF0  ; Sprite data for "0"
+      </code></pre>
+
+      <p>
+        They could then manually convert these mnemonics to the hex opcodes I showed earlier. Finally, they would enter those hex values directly into memory using hexadecimal keypads.
+      </p>
+
+      <p>
+        This is a fundamental point. There wasn't a separate "CHIP-8 source language" that looked like C or BASIC. The opcodes <em>were</em> the language; just represented in a more human-friendly mnemonic form during development.
+      </p>
+
+      <p>
+        I bring this up because certain modern CHIP-8 development tools do provide assemblers that let you write with labels and mnemonics, but historically, many programs were written by directly calculating and entering the hex opcodes. It was a very low-level, hardware-close way of programming that was typical of early microcomputer systems.
+      </p>
     </article>
   </main>
 

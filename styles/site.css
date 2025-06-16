@@ -123,3 +123,21 @@ img {
 :where(p) + p {
   text-indent: var(--para-indent);
 }
+
+pre {
+  padding: 0;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+pre code {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-radius: 10px;
+  font-family: var(--ff-mono);
+  font-size: 0.8em;
+  word-spacing: normal;
+  letter-spacing: normal;
+}

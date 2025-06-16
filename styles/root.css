@@ -5,6 +5,9 @@
   --ff-base-bold-italic: "Montserrat-BoldItalic", sans-serif;
   --ff-heading: "Kyiv Sans", sans-serif;
 
+  --ff-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
   --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   --font-size-h1: clamp(2rem, 1.8rem + 1vw, 3rem);
   --font-size-h2: clamp(1.7rem, 1.6rem + 0.5vw, 2.2rem);
