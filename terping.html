@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="auto" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>terp8or</title>
+  <link rel="stylesheet" href="./styles/site.css">
+  <script src="./scripts/site.js"></script>
+</head>
+<body>
+  <header>
+    <img src="./assets/images/terp8or.png" width="295" height="122" alt="terp8or">
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./terping.html">Terping</a>
+      <a href="./specs.html">Specifications</a>
+      <a href="./refs.html">References</a>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h2>'Terping</h2>
+
+      <p>
+        I call this section "Terping" (short-hand for "Interpreting") rather than "Emulating" because you often hear about people writing "CHIP-8 emulators" but that's not quite what most such projects are actually doing.
+      </p>
+
+      <p>
+        Let's say I want to run the original Atari game <em>Pitfall</em>.
+      </p>
+      
+      <img src="./assets/images/pitfall.jpg" width="529" height="390">
+
+      <p>
+        There's only one problem: I don't have an Atari 2600 to run it on. I could, of course, just re-implement <em>Pitfall</em> to run on the system I want it to. That, of course, would not be running the original but, rather, a derivative based on it. Instead, if I want to run the original on, say, my PC, I would need to emulate the environment in which the original ran.
+      </p>
+        
+      <p>
+        In the case of an emulator, I would be choosing not to re-implement the game <em>Pitfall</em> for my native system. Instead, I would re-create the environment with a computer program which allows me to run the original machine code of <em>Pitfall</em>. (You can see some of that <a href="./assets/docs/pitfall-source.pdf">original code</a> if you want!) A benefit of this is that it won't just allow me to run that game, but also any other game developed for the Atari platform.
+      </p>
+
+      <p>
+        In the case of Atari, if you wrote an emulator, you would be writing a software implementation of what was a physical system. In the case of something like the CHIP-8 or the Z-Machine, you are implementing something that was never a real machine. These were, instead, virtual machines. The CHIP-8 may have run on a COSMAC VIP, for example, but you don't need to emulate the COSMAC VIP to run a CHIP-8. Similarly, the Z-Machine may have run on a Commodore 64, but you don't need to emulate a Commodore 64 to run a Z-Machine.
+      </p>
+
+      <p>
+        So let's be clear what the CHIP-8 was: an interpreted programming language/virtual machine specification, not a physical hardware system. It was designed to run on top of existing hardware like the COSMAC VIP, Telmac 1800, and other RCA 1802-based systems. The CHIP-8 "system" provided a standardized, higher-level interface that abstracted away the specifics of the underlying hardware.
+      </p>
+
+      <p>
+        When you implement CHIP-8 today, you're creating an interpreter that directly executes CHIP-8 bytecode, just like the original CHIP-8 interpreters did on those 1970s machines. You're implementing the CHIP-8 virtual machine specification, not emulating any particular piece of hardware. An actual emulator would simulate the COSMAC VIP's hardware components &mdash; its RCA 1802 CPU, memory layout, I/O systems, etc. &mdash; and then run the original CHIP-8 interpreter program within that emulated environment.
+      </p>
+
+      <p>
+        This distinction matters because it affects how you approach the implementation. As a CHIP-8 interpreter, you're focused on faithfully implementing the CHIP-8 instruction set and system behavior, rather than worrying about cycle-accurate timing, hardware-specific quirks, or low-level hardware details of the host machines.
+      </p>
+
+      <p>
+        Thus, "CHIP-8 interpreter" is the technically accurate term, even though "CHIP-8 emulator" has become common parlance in retro computing circles.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 terp8or - Jeff Nyman. All rights reserved.</p>
+  </footer>
+</body>
+</html>
